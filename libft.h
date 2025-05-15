@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:37:19 by crizapat          #+#    #+#             */
-/*   Updated: 2024/03/26 14:26:37 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/26 14:05:20 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,13 @@ size_t				ft_strlen(const char *str);
  */
 void				*ft_memset(void *ptr, int charac, size_t len);
 
+/*
+ * Verifica si el caracter actual es un espacio.
+ * @param char caracter a verificar 
+ * @return int 0 o 1 en caso de verdadero o falso 
+ */
+int					ft_is_space(char character);
+
 /**
  * Establece los primeros len bytes del área de memoria
  * apuntada por ptr al valor 0.
@@ -84,6 +91,13 @@ void				*ft_memset(void *ptr, int charac, size_t len);
  * @param len Número de bytes a establecer.
  */
 void				ft_bzero(void *ptr, size_t len);
+
+/**
+ * Calcula la raíz cuadrada de un número. 
+ * @param number número del que queremos la raiz.
+ * @return raíz cuadrada del parámetro
+ */
+int					ft_square_number(int number);
 
 /**
  * Copia len bytes de src a dest
@@ -137,7 +151,7 @@ int					ft_toupper(int charac);
 int					ft_tolower(int charac);
 
 /**
- * Busca un caracter en una cadena
+ * Busca un caracter en una cadena.
  * @param str Cadena en la que buscar.
  * @param charac Caracter a buscar.
  * @return Retorna un puntero a la primera aparición del carácter en la cadena.
@@ -146,7 +160,7 @@ int					ft_tolower(int charac);
 char				*ft_strchr(const char *str, int charac);
 
 /**
- * Busca un caracter en una cadena empezando por el final
+ * Busca un caracter en una cadena empezando por el final.
  * @param str Cadena en la que buscar.
  * @param chr Caracter a buscar.
  * @return Retorna un puntero a la primera aparición del carácter en la cadena.
@@ -335,11 +349,11 @@ void				ft_putnbr_fd(int num, int fd);
 t_list				*ft_lstnew(void *content);
 
 /**
- * Añade el nodo ’new’ al principio de la lista ’lst’
+ * Añade el nodo ’new_node’ al principio de la lista ’lst’
  * @param lst  dirección de un puntero al primer nodo de una lista.
- * @param new  un puntero al nodo que añadir al principio de la lista.
+ * @param new_node  un puntero al nodo que añadir al principio de la lista.
  */
-void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_front(t_list **lst, t_list *new_node);
 
 /**
  * Cuenta el número de nodos de una lista.
@@ -356,11 +370,11 @@ int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 
 /**
- * Añade el nodo ’new’ al final de la lista.
+ * Añade el nodo ’new_node’ al final de la lista.
  * @param lst  dirección de un puntero al primer nodo de una lista.
- * @param new  un puntero al nodo que añadir al final de la lista.
+ * @param new_node  un puntero al nodo que añadir al final de la lista.
 */
-void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new_node);
 
 /**
  * Libera la memoria del nodo pasado como argumento
